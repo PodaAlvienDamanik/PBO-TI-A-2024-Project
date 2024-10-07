@@ -76,8 +76,10 @@ public class crudPembeli {
     }
 
     public static void bacaPesanan(ArrayList<Pesanan> dataPesanan) {
+        int counter = 1;
         for(Pesanan data: dataPesanan) {
-            System.out.println(data.getNamaPembeli() +"\t" + data.getItem() + "\t" + data.getStatus());
+            System.out.println(counter+".\t"+data.getNamaPembeli() +"\t" + data.getItem() + "\t" + data.getStatus());
+            counter++;
         }
 
     }
