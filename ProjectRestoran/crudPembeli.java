@@ -54,7 +54,23 @@ class Pesanan {
 
 // Kelas Restoran yang memiliki fungsi CRUD
 public class crudPembeli {
+    public static ArrayList<Pesanan> pesananList = new ArrayList<>();
 
+    // Fungsi Create: Membuat pesanan baru
+    public static void buatPesanan(String namaPembeli, String item) {
+        Pesanan pesananBaru = new Pesanan(namaPembeli, item, "Sedang Diproses");
+        pesananList.add(pesananBaru);
+        System.out.println("Pesanan berhasil dibuat untuk " + namaPembeli);
+    }
+
+    public static void hapusPesanan(int index) {
+        if (index >= 0 && index < pesananList.size()) {
+            pesananList.remove(index);
+            System.out.println("Pesanan berhasil dihapus.");
+        } else {
+            System.out.println("Pesanan tidak ditemukan.");
+        }
+    }
 
 
     public static void bacaPesanan(ArrayList<Pesanan> dataPesanan) {
