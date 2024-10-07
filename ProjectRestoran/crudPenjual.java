@@ -1,8 +1,7 @@
 package ProjectRestoran;
+import java.util.Scanner;
 
-public class crudPenjual {
-    public static void main(String[] args) {
 
-    }
+public static void run(String[] args) {
+
 }
-    
