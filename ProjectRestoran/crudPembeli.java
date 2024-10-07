@@ -76,14 +76,11 @@ public class crudPembeli {
     }
 
     public static void bacaPesanan(ArrayList<Pesanan> dataPesanan) {
-
         for(Pesanan data: dataPesanan) {
             System.out.println(data.getNamaPembeli() +"\t" + data.getItem() + "\t" + data.getStatus());
         }
 
     }
-
-
 
     public static void run(Scanner scanner) {
         int pilihan;
