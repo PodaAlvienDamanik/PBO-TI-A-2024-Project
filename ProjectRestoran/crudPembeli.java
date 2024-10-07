@@ -78,6 +78,7 @@ public class crudPembeli {
         int pilihan;
 
         do {
+            System.out.println("Settingan Poda");
             System.out.println("Settingan Yesaya");
             System.out.println("\n== Manajemen Pesanan Restoran ==");
             System.out.println("1. Buat Pesanan");
