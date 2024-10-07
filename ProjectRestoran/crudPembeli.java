@@ -9,6 +9,7 @@ class Pesanan {
     private String item;
     private String status;
 
+
     public Pesanan(String namaPembeli, String item, String status) {
         this.namaPembeli = namaPembeli;
         this.item = item;
@@ -62,6 +63,8 @@ public class crudPembeli {
         System.out.println("Pesanan berhasil dibuat untuk " + namaPembeli);
     }
 
+
+
     // Fungsi Delete: Menghapus pesanan
     public static void hapusPesanan(int index) {
         if (index >= 0 && index < pesananList.size()) {
@@ -70,6 +73,14 @@ public class crudPembeli {
         } else {
             System.out.println("Pesanan tidak ditemukan.");
         }
+    }
+
+    public static void bacaPesanan(ArrayList<Pesanan> dataPesanan) {
+
+        for(Pesanan data: dataPesanan) {
+            System.out.println(data.getNamaPembeli() +"\t" + data.getItem() + "\t" + data.getStatus());
+        }
+
     }
 
 
