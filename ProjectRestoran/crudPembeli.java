@@ -96,7 +96,6 @@ public class crudPembeli {
 
             switch (pilihan) {
                 case 1:
-                    // Create
                     System.out.print("Masukkan nama pembeli: ");
                     String namaPembeli = scanner.nextLine();
                     System.out.print("Masukkan item pesanan: ");
