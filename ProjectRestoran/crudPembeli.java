@@ -3,7 +3,7 @@ package ProjectRestoran;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// Kelas Pesanan untuk mengelola pesanan
+
 class Pesanan {
     private String namaPembeli;
     private String item;
@@ -16,7 +16,6 @@ class Pesanan {
         this.status = status;
     }
 
-    // Getters dan Setters
     public String getNamaPembeli() {
         return namaPembeli;
     }
@@ -52,7 +51,7 @@ class Pesanan {
     }
 }
 
-// Kelas Restoran yang memiliki fungsi CRUD
+
 public class crudPembeli {
     public static ArrayList<Pesanan> pesananList = new ArrayList<>();
 
@@ -94,7 +93,7 @@ public class crudPembeli {
             System.out.println("5. Keluar");
             System.out.print("Masukkan pilihan: ");
             pilihan = scanner.nextInt();
-            scanner.nextLine();  // Konsumsi newline
+            scanner.nextLine();
 
             switch (pilihan) {
                 case 1:
