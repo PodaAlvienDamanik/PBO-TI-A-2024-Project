@@ -55,7 +55,6 @@ class Pesanan {
 public class crudPembeli {
     public static ArrayList<Pesanan> pesananList = new ArrayList<>();
 
-    // Fungsi Create: Membuat pesanan baru
     public static void buatPesanan(String namaPembeli, String item) {
         Pesanan pesananBaru = new Pesanan(namaPembeli, item, "Sedang Diproses");
         pesananList.add(pesananBaru);
