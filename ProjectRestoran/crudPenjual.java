@@ -113,7 +113,6 @@ public class crudPenjual {
                     break;
 
                 case 5:
-                    System.out.println("Terima kasih!");
                     break;
 
                 default:
