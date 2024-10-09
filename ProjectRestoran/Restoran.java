@@ -23,6 +23,7 @@ public class Restoran {
                     System.out.print("Masukkan Password Anda: ");
                     int inputPassword = input.nextInt();
                     if (cekUserNamePenjual(inputUsername, inputPassword)) {
+                        crudPenjual.run(input);
                     }else{
                         System.out.println("Username atau password anda tidak valid!");
 
