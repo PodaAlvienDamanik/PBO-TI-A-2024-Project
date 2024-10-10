@@ -94,7 +94,47 @@ public class crudPenjual {
         }
     }
 
+    public static void updatePesanan(Scanner scanner) { // dibuat oleh Poda tanggal 10/10/2024 jam 10.41
+        bacaPesanan();
+        System.out.print("Masukkan nomor pesanan yang ingin diperbarui: ");
+        int index = scanner.nextInt() - 1;
+        scanner.nextLine();
 
+        if (index >= 0 && index < pesananList.size()) {
+            PesananOnline pesanan = pesananList.get(index);
+
+            System.out.println("Pesanan Saat Ini: " + pesanan);
+
+            System.out.print("Ingin mengubah nama pembeli? (y/n): ");
+            if (scanner.nextLine().equalsIgnoreCase("y")) {
+                System.out.print("Masukkan nama baru: ");
+                pesanan.setNamaPembeli(scanner.nextLine());
+            }
+
+            System.out.print("Ingin mengubah item? (y/n): ");
+            if (scanner.nextLine().equalsIgnoreCase("y")) {
+                System.out.print("Masukkan item baru: ");
+                pesanan.setItem(scanner.nextLine());
+            }
+
+            System.out.print("Ingin mengubah kuantitas? (y/n): ");
+            if (scanner.nextLine().equalsIgnoreCase("y")) {
+                System.out.print("Masukkan kuantitas baru: ");
+                pesanan.setKuantitas(scanner.nextInt());
+                scanner.nextLine();
+            }
+
+            System.out.print("Ingin mengubah status? (y/n): ");
+            if (scanner.nextLine().equalsIgnoreCase("y")) {
+                System.out.print("Masukkan status baru: ");
+                pesanan.setStatus(scanner.nextLine());
+            }
+
+            System.out.println("Pesanan berhasil diperbarui.");
+        } else {
+            System.out.println("Pesanan tidak ditemukan.");
+        }
+    }
 
 
     public static void run(Scanner scanner) {
@@ -122,11 +162,11 @@ public class crudPenjual {
                     break;
 
                 case 3:
-                    //Update
+                    updatePesanan(scanner);
                     break;
 
                 case 4:
-                    // Delete
+
                     break;
 
                 case 5:
