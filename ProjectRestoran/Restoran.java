@@ -4,6 +4,26 @@ import java.util.Scanner;
 
 public class Restoran {
 
+    private static boolean cekUserNamePenjual(String username,int password){//07 Oktober 2024/22.53 WIB Malam Membuat fitur password untuk penjual
+        if (password == 1234){
+            return username.equals("Poda") || username.equals("Arvind") || username.equals("Yesaya");
+        }
+        return false;
+    }
+
+    private static void inputPenjual(Scanner input) {
+        System.out.print("Masukkan Username Anda: ");
+        String inputUsername = input.nextLine();
+        System.out.print("Masukkan Password Anda: ");
+        int inputPassword = input.nextInt();
+        input.nextLine(); // Consume newline
+
+        if (cekUserNamePenjual(inputUsername, inputPassword)) {
+            crudPenjual.run(input);
+        } else {
+            System.out.println("Username atau password anda tidak valid!");
+        }
+    }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         while (true) {
@@ -18,16 +38,7 @@ public class Restoran {
 
             switch (pilihan){
                 case 1:
-                    System.out.print("Masukkan Username Anda: ");
-                    String inputUsername = input.nextLine();
-                    System.out.print("Masukkan Password Anda: ");
-                    int inputPassword = input.nextInt();
-                    if (cekUserNamePenjual(inputUsername, inputPassword)) {
-                        crudPenjual.run(input);
-                    }else{
-                        System.out.println("Username atau password anda tidak valid!");
-
-                    }
+                    inputPenjual(input);
                     break;
 
                 case 2:
@@ -46,11 +57,5 @@ public class Restoran {
             }
 
         }
-    }
-    private static boolean cekUserNamePenjual(String username,int password){//07 Oktober 2024/22.53 WIB Malam Membuat fitur password untuk penjual
-        if (password == 1234){
-            return username.equals("Poda") || username.equals("Arvind") || username.equals("Yesaya");
-        }
-        return false;
     }
 }
