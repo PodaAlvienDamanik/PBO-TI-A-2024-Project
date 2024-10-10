@@ -60,15 +60,32 @@ class Pesanan {
 public class crudPembeli {
     public static ArrayList<Pesanan> pesananList = new ArrayList<>();
 
+    public static void DaftarMenu(){    //dibuat oleh Poda tanggal 10/10/2024 jam 11.14
+        System.out.println("Daftar Menu Restoran Mandalika");
+        System.out.println("Daftar Makanan==================");
+        System.out.println("1.Nasi                  Rp.5000");
+        System.out.println("2.Ayam Panggang         Rp.10.000");
+        System.out.println("3.Ayam Goreng           Rp.8.000");
+        System.out.println("4.Gulai Tunjang         Rp.15.000");
+        System.out.println("5.Telor Balado          Rp.10.000");
+        System.out.println("Daftar Minuman==================");
+        System.out.println("1.Air Putih             Rp.3000");
+        System.out.println("2.Teh Manis Dingin      Rp.5000");
+        System.out.println("3.Es Jeruk              Rp.6000");
+        System.out.println("4.Aneka Jus             Rp.12.000");
+        System.out.println("5.Es krim               Rp.5000");
+    }
+
     public static void buatPesanan(String namaPembeli, String item, int kuantitas) {
         Pesanan pesananBaru = new Pesanan(namaPembeli, item, kuantitas, "Sedang Diproses");
         pesananList.add(pesananBaru);
         System.out.println("Pesanan berhasil dibuat untuk " + namaPembeli);
     }
 
-    private static void inputPesananPembeli(Scanner scanner) { //dibuat oleh Poda tanggal 10/10/2024 jam 10.14
+    public static void inputPesananPembeli(Scanner scanner) { //dibuat oleh Poda tanggal 10/10/2024 jam 10.14
         boolean adaPesananLain = true;
         while (adaPesananLain) {
+            DaftarMenu();
             System.out.print("Masukkan nama pembeli: ");
             String namaPembeli = scanner.nextLine();
             System.out.print("Masukkan item pesanan: ");
@@ -103,6 +120,7 @@ public class crudPembeli {
         int index = scanner.nextInt() - 1;
         scanner.nextLine();
 
+        DaftarMenu();
         if (index >= 0 && index < pesananList.size()) {
             Pesanan pesanan = pesananList.get(index);
 
