@@ -165,6 +165,7 @@ public class crudPembeli {
 
             do {
                 System.out.println("\n== Manajemen Pesanan Restoran ==");
+                DaftarMenu();
                 System.out.println("1. Buat Pesanan");
                 System.out.println("2. Lihat Semua Pesanan");
                 System.out.println("3. Update Pesanan");

@@ -162,7 +162,7 @@ public class crudPenjual {
 
             switch (pilihan) {
                 case 1:
-                    inputPesanan(scanner);//dibuat oleh Poda tanggal 10/10/2024 jam 09.36
+                    inputPesanan(scanner); //dibuat oleh Poda tanggal 10/10/2024 jam 09.36
                     break;
 
                 case 2:
