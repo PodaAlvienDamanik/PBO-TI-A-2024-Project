@@ -62,13 +62,13 @@ public class crudPembeli {
 
     public static void DaftarMenu(){    //dibuat oleh Poda tanggal 10/10/2024 jam 11.14
         System.out.println("Daftar Menu Restoran Mandalika");
-        System.out.println("Daftar Makanan==================");
+        System.out.println("====== Daftar Makanan ======");
         System.out.println("1.Nasi                  Rp.5000");
         System.out.println("2.Ayam Panggang         Rp.10.000");
         System.out.println("3.Ayam Goreng           Rp.8.000");
         System.out.println("4.Gulai Tunjang         Rp.15.000");
         System.out.println("5.Telor Balado          Rp.10.000");
-        System.out.println("Daftar Minuman==================");
+        System.out.println("====== Daftar Minuman =======");
         System.out.println("1.Air Putih             Rp.3000");
         System.out.println("2.Teh Manis Dingin      Rp.5000");
         System.out.println("3.Es Jeruk              Rp.6000");
