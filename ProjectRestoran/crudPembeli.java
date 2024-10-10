@@ -116,7 +116,7 @@ public class crudPembeli {
                     break;
 
                 case 4:
-                    System.out.print("Masukkan nomor pesanan yang ingin dihapus: "); //dibuat tanggal 10/10/2024 jam 09:22
+                    System.out.print("Masukkan nomor pesanan yang ingin dihapus: "); //dibuat tanggal 10/10/2024 Yesaya Sitompul jam 09:22
                     int nomorHapus = scanner.nextInt() - 1;
                     hapusPesanan(nomorHapus);
                     break;
