@@ -82,6 +82,18 @@ public class crudPenjual {
         }
     }
 
+    public static void bacaPesanan() {//dibuat oleh Arvind tanggal 10/10/2024 jam 09.42
+        if (pesananList.isEmpty()) {
+            System.out.println("Tidak ada pesanan untuk ditampilkan.");
+            return;
+        }
+        int counter = 1;
+        for (PesananOnline data : pesananList) {
+            System.out.println(counter + ". " + data.getNamaPembeli() + "\t" + data.getItem() + "\t" + data.getKuantitas() + "\t" + data.getStatus());
+            counter++;
+        }
+    }
+
 
 
 
@@ -106,6 +118,7 @@ public class crudPenjual {
 
                 case 2:
                     // Read
+                    bacaPesanan();
                     break;
 
                 case 3:
