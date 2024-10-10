@@ -73,7 +73,9 @@ public class crudPembeli {
             counter++;
         }
     }
-    public static void updatePesanan(int index) {}
+
+
+
 
 
     public static void hapusPesanan(int index) {
