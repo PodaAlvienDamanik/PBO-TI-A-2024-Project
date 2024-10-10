@@ -118,7 +118,7 @@ public class crudPembeli {
                     break;
 
                 case 5:
-                    System.out.println("Terima kasih Telah Menggunakan Aplikasi ini!");//dibuat tanggal 10/10/2024 jam 09.05
+                    System.out.println("Terima kasih Telah Menggunakan Aplikasi ini yaw!");//dibuat tanggal 10/10/2024 jam 09.05
                     break;
 
                 default:
