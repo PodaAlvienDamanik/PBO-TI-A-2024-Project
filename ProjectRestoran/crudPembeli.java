@@ -71,13 +71,17 @@ public class crudPembeli {
     }
 
 
-    public static void bacaPesanan(ArrayList<Pesanan> dataPesanan) {
-        int counter = 1;
-        for(Pesanan data: dataPesanan) {
-            System.out.println(counter+".\t"+data.getNamaPembeli() +"\t" + data.getItem() + "\t" + data.getStatus());
-            counter++;
+    public static void bacaPesanan() { //dibuat tanggal 10/10/2024 jam 09.05
+        if (pesananList.isEmpty()) {
+            System.out.println("Tidak ada pesanan untuk ditampilkan.");
+            return;
         }
 
+        int counter = 1;
+        for (Pesanan data : pesananList) {
+            System.out.println(counter + ". " + data.getNamaPembeli() + "\t" + data.getItem() + "\t" + data.getStatus());
+            counter++;
+        }
     }
 
     public static void run(Scanner scanner) {
@@ -104,19 +108,17 @@ public class crudPembeli {
                     break;
 
                 case 2:
+                    bacaPesanan();//dibuat tanggal 10/10/2024 jam 09.05
                     break;
 
                 case 3:
                     break;
 
                 case 4:
-                    System.out.print("Masukkan nomor pesanan yang ingin dihapus: ");
-                    int nomorHapus = scanner.nextInt() - 1;
-                    hapusPesanan(nomorHapus);
                     break;
 
                 case 5:
-                    System.out.println("Terima kasih!");
+                    System.out.println("Terima kasih Telah Menggunakan Aplikasi ini!");//dibuat tanggal 10/10/2024 jam 09.05
                     break;
 
                 default:
