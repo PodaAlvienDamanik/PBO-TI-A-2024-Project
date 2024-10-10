@@ -61,16 +61,6 @@ public class crudPembeli {
         System.out.println("Pesanan berhasil dibuat untuk " + namaPembeli);
     }
 
-    public static void hapusPesanan(int index) {
-        if (index >= 0 && index < pesananList.size()) {
-            pesananList.remove(index);
-            System.out.println("Pesanan berhasil dihapus.");
-        } else {
-            System.out.println("Pesanan tidak ditemukan.");
-        }
-    }
-
-
     public static void bacaPesanan() { //dibuat tanggal 10/10/2024 jam 09.05
         if (pesananList.isEmpty()) {
             System.out.println("Tidak ada pesanan untuk ditampilkan.");
@@ -83,6 +73,17 @@ public class crudPembeli {
             counter++;
         }
     }
+
+
+    public static void hapusPesanan(int index) {
+        if (index >= 0 && index < pesananList.size()) {
+            pesananList.remove(index);
+            System.out.println("Pesanan berhasil dihapus.");
+        } else {
+            System.out.println("Pesanan tidak ditemukan.");
+        }
+    }
+
 
     public static void run(Scanner scanner) {
         int pilihan;
