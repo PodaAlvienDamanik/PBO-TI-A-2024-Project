@@ -130,6 +130,7 @@ public class crudPenjual {
                     break;
 
                 case 5:
+                    System.out.println("Kamu Sukses Keluar,Silakan Kembali lagi!");//dibuat oleh Arvind tanggal 10/10/2024 jam 09.54
                     break;
 
                 default:
