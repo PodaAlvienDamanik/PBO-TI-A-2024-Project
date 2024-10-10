@@ -64,6 +64,24 @@ public class crudPenjual {
         System.out.println();
     }
 
+    private static void inputPesanan(Scanner scanner) { //dibuat oleh Poda tanggal 10/10/2024 jam 09.36
+        boolean adaPesananLain = true;
+        while (adaPesananLain) {
+            System.out.print("Masukkan nama pembeli: ");
+            String namaPembeli = scanner.nextLine();
+            System.out.print("Masukkan item pesanan: ");
+            String item = scanner.nextLine();
+            System.out.print("Berapa Banyak: ");
+            int kuantitasItem = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            buatPesanan(namaPembeli, item, kuantitasItem);
+
+            System.out.print("Apakah ada pesanan lain? (y/n): ");
+            String jawab = scanner.nextLine();
+            adaPesananLain = jawab.equalsIgnoreCase("y");
+        }
+    }
+
 
 
 
@@ -83,21 +101,7 @@ public class crudPenjual {
 
             switch (pilihan) {
                 case 1:
-                    boolean adaPesananLain = true;
-                    while (adaPesananLain) {
-                        System.out.print("Masukkan nama pembeli: ");
-                        String namaPembeli = scanner.nextLine();
-                        System.out.print("Masukkan item pesanan: ");//dibuat tanggal 09/10/2024 jam 23.00
-                        String item = scanner.nextLine();
-                        System.out.print("Berapa Banyak: ");
-                        int kuantitasItem = scanner.nextInt();
-                        scanner.nextLine();
-                        buatPesanan(namaPembeli, item,kuantitasItem);
-
-                        System.out.print("Apakah ada pesanan lain? (y/n): ");
-                        String jawab = scanner.nextLine();
-                        adaPesananLain = jawab.equalsIgnoreCase("y");
-                    }
+                    inputPesanan(scanner);//dibuat oleh Poda tanggal 10/10/2024 jam 09.36
                     break;
 
                 case 2:
