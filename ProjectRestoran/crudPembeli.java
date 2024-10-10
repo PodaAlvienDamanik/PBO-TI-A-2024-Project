@@ -73,30 +73,7 @@ public class crudPembeli {
             counter++;
         }
     }
-
-    public static void prosesUpdatePesanan(Scanner scanner) {
-        if (pesananList.isEmpty()) {
-            System.out.println("Belum ada pesanan untuk diperbarui.");
-            return;
-        }
-
-        System.out.print("Masukkan nomor pesanan yang ingin diupdate: ");
-        int nomorUpdate = scanner.nextInt() - 1;
-        scanner.nextLine(); // Membuang newline setelah nextInt()
-
-        if (nomorUpdate >= 0 && nomorUpdate < pesananList.size()) {
-            System.out.print("Masukkan nama pembeli baru: ");
-            String namaPembeliBaru = scanner.nextLine();
-            System.out.print("Masukkan item pesanan baru: ");
-            String itemBaru = scanner.nextLine();
-            System.out.print("Masukkan status baru (Sedang Diproses / Selesai): ");
-            String statusBaru = scanner.nextLine();
-            prosesUpdatePesanan(nomorUpdate, namaPembeliBaru, itemBaru, statusBaru);
-        } else {
-            System.out.println("Pesanan tidak ditemukan.");
-        }
-    }
-
+    public static void updatePesanan(int index) {}
 
 
     public static void hapusPesanan(int index) {
@@ -137,7 +114,6 @@ public class crudPembeli {
                     break;
 
                 case 3:
-                    prosesUpdatePesanan(scanner); //dibuat tanggal 10/10/2024 jam 09:39
                     break;
 
                 case 4:
