@@ -73,7 +73,7 @@ public class crudPenjual {
             String item = scanner.nextLine();
             System.out.print("Berapa Banyak: ");
             int kuantitasItem = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
             buatPesanan(namaPembeli, item, kuantitasItem);
 
             System.out.print("Apakah ada pesanan lain? (y/n): ");
@@ -166,7 +166,6 @@ public class crudPenjual {
                     break;
 
                 case 2:
-                    // Read
                     bacaPesanan();
                     break;
 

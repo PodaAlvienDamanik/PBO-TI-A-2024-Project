@@ -16,7 +16,7 @@ public class Restoran {
         String inputUsername = input.nextLine();
         System.out.print("Masukkan Password Anda: ");
         int inputPassword = input.nextInt();
-        input.nextLine(); // Consume newline
+        input.nextLine();
 
         if (cekUserNamePenjual(inputUsername, inputPassword)) {
             crudPenjual.run(input);
