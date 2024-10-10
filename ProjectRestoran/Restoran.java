@@ -26,7 +26,7 @@ public class Restoran {
     }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        while (true) {
+        while (true) { //dibuat tanggal 8/10/2024 jam 22.15 oleh Poda
             System.out.println("Selamat Datang di Restoran Mandalika");
             System.out.println("Silakan Masukkan Pilihan Anda");
             System.out.println("1.Penjual");
