@@ -7,12 +7,14 @@ import java.util.Scanner;
 class Pesanan {
     private String namaPembeli;
     private String item;
+    private int kuantitas;
     private String status;
 
 
-    public Pesanan(String namaPembeli, String item, String status) {
+    public Pesanan(String namaPembeli, String item,int kuantitas, String status) {
         this.namaPembeli = namaPembeli;
         this.item = item;
+        this.kuantitas = kuantitas;
         this.status = status;
     }
 
@@ -33,6 +35,13 @@ class Pesanan {
         this.item = item;
     }
 
+    public int getKuantitas(){
+        return kuantitas;
+    }
+    public void setKuantitas(int kuantitas){
+        this.kuantitas = kuantitas;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -43,11 +52,7 @@ class Pesanan {
 
     @Override
     public String toString() {
-        return "Pesanan{" +
-                "Nama Pembeli='" + namaPembeli + '\'' +
-                ", Item='" + item + '\'' +
-                ", Status='" + status + '\'' +
-                '}';
+        return "Pesanan{" + "Nama Pembeli='" + namaPembeli + '\'' + ", Item='" + item + '\'' + ", Kuantitas='" + kuantitas + '\'' + ", Status='" + status + '\'' + '}';
     }
 }
 
@@ -55,11 +60,12 @@ class Pesanan {
 public class crudPembeli {
     public static ArrayList<Pesanan> pesananList = new ArrayList<>();
 
-    public static void buatPesanan(String namaPembeli, String item) {
-        Pesanan pesananBaru = new Pesanan(namaPembeli, item, "Sedang Diproses");
+    public static void buatPesanan(String namaPembeli, String item,int kuantitas) {
+        Pesanan pesananBaru = new Pesanan(namaPembeli, item,kuantitas ,"Sedang Diproses");
         pesananList.add(pesananBaru);
         System.out.println("Pesanan berhasil dibuat untuk " + namaPembeli);
     }
+
 
     public static void bacaPesanan() { //dibuat tanggal 10/10/2024 jam 09.05
         if (pesananList.isEmpty()) {
@@ -69,14 +75,10 @@ public class crudPembeli {
 
         int counter = 1;
         for (Pesanan data : pesananList) {
-            System.out.println(counter + ". " + data.getNamaPembeli() + "\t" + data.getItem() + "\t" + data.getStatus());
+            System.out.println(counter + ". " + data.getNamaPembeli() + "\t" + data.getItem() + "\t" + data.getKuantitas()+ "\t" + data.getStatus());
             counter++;
         }
     }
-
-
-
-
 
     public static void hapusPesanan(int index) {
         if (index >= 0 && index < pesananList.size()) {
@@ -104,11 +106,7 @@ public class crudPembeli {
 
             switch (pilihan) {
                 case 1:
-                    System.out.print("Masukkan nama pembeli: ");
-                    String namaPembeli = scanner.nextLine();
-                    System.out.print("Masukkan item pesanan: ");
-                    String item = scanner.nextLine();
-                    buatPesanan(namaPembeli, item);
+
                     break;
 
                 case 2:
