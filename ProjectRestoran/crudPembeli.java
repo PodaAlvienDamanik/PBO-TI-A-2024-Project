@@ -82,7 +82,7 @@ public class crudPembeli {
         System.out.println("Pesanan berhasil dibuat untuk " + namaPembeli);
     }
 
-    public static void inputPesananPembeli(Scanner scanner) { //dibuat oleh Poda tanggal 10/10/2024 jam 10.14
+    public static void inputPesananPembeli(Scanner scanner) { //dibuat oleh Yesaya tanggal 10/10/2024 jam 10.14
         boolean adaPesananLain = true;
         while (adaPesananLain) {
             DaftarMenu();
