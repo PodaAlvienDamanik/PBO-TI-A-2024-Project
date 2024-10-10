@@ -136,6 +136,15 @@ public class crudPenjual {
         }
     }
 
+    public static void hapusPesanan(int index) {
+        if (index >= 0 && index < pesananList.size()) {
+            pesananList.remove(index);
+            System.out.println("Pesanan berhasil dihapus.");
+        } else {
+            System.out.println("Pesanan tidak ditemukan.");
+        }
+    }
+
 
     public static void run(Scanner scanner) {
         int pilihan;
@@ -166,7 +175,9 @@ public class crudPenjual {
                     break;
 
                 case 4:
-
+                    System.out.print("Masukkan nomor pesanan yang ingin dihapus: "); //dibuat tanggal 10/10/2024 Yesaya Sitompul jam 10:45
+                    int nomorHapus = scanner.nextInt() - 1;
+                    hapusPesanan(nomorHapus);
                     break;
 
                 case 5:
