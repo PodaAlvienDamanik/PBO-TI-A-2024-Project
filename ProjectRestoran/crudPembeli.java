@@ -60,12 +60,29 @@ class Pesanan {
 public class crudPembeli {
     public static ArrayList<Pesanan> pesananList = new ArrayList<>();
 
-    public static void buatPesanan(String namaPembeli, String item,int kuantitas) {
-        Pesanan pesananBaru = new Pesanan(namaPembeli, item,kuantitas ,"Sedang Diproses");
+    public static void buatPesanan(String namaPembeli, String item, int kuantitas) {
+        Pesanan pesananBaru = new Pesanan(namaPembeli, item, kuantitas, "Sedang Diproses");
         pesananList.add(pesananBaru);
         System.out.println("Pesanan berhasil dibuat untuk " + namaPembeli);
     }
 
+    private static void inputPesananPembeli(Scanner scanner) { //dibuat oleh Poda tanggal 10/10/2024 jam 10.14
+        boolean adaPesananLain = true;
+        while (adaPesananLain) {
+            System.out.print("Masukkan nama pembeli: ");
+            String namaPembeli = scanner.nextLine();
+            System.out.print("Masukkan item pesanan: ");
+            String item = scanner.nextLine();
+            System.out.print("Berapa Banyak: ");
+            int kuantitasItem = scanner.nextInt();
+            scanner.nextLine();
+            buatPesanan(namaPembeli, item, kuantitasItem);
+
+            System.out.print("Apakah ada pesanan lain? (y/n): ");
+            String jawab = scanner.nextLine();
+            adaPesananLain = jawab.equalsIgnoreCase("y");
+        }
+    }
 
     public static void bacaPesanan() { //dibuat tanggal 10/10/2024 jam 09.05
         if (pesananList.isEmpty()) {
@@ -75,7 +92,7 @@ public class crudPembeli {
 
         int counter = 1;
         for (Pesanan data : pesananList) {
-            System.out.println(counter + ". " + data.getNamaPembeli() + "\t" + data.getItem() + "\t" + data.getKuantitas()+ "\t" + data.getStatus());
+            System.out.println(counter + ". " + data.getNamaPembeli() + "\t" + data.getItem() + "\t" + data.getKuantitas() + "\t" + data.getStatus());
             counter++;
         }
     }
@@ -89,48 +106,55 @@ public class crudPembeli {
         }
     }
 
+    public static void updatePesanan(Scanner scanner) {
+        if (pesananList.isEmpty()) {
+            System.out.println("Belum ada pesanan untuk diperbarui.");
+            return;
+        }
 
-    public static void run(Scanner scanner) {
-        int pilihan;
+        public static void run(Scanner scanner){
+            int pilihan;
 
-        do {
-            System.out.println("\n== Manajemen Pesanan Restoran ==");
-            System.out.println("1. Buat Pesanan");
-            System.out.println("2. Lihat Semua Pesanan");
-            System.out.println("3. Update Pesanan");
-            System.out.println("4. Hapus Pesanan");
-            System.out.println("5. Keluar");
-            System.out.print("Masukkan pilihan: ");
-            pilihan = scanner.nextInt();
-            scanner.nextLine();
+            do {
+                System.out.println("\n== Manajemen Pesanan Restoran ==");
+                System.out.println("1. Buat Pesanan");
+                System.out.println("2. Lihat Semua Pesanan");
+                System.out.println("3. Update Pesanan");
+                System.out.println("4. Hapus Pesanan");
+                System.out.println("5. Keluar");
+                System.out.print("Masukkan pilihan: ");
+                pilihan = scanner.nextInt();
+                scanner.nextLine();
 
-            switch (pilihan) {
-                case 1:
+                switch (pilihan) {
+                    case 1:
+                        inputPesananPembeli(scanner);
+                        break;
 
-                    break;
+                    case 2:
+                        bacaPesanan();//dibuat tanggal 10/10/2024 jam 09.05
+                        break;
 
-                case 2:
-                    bacaPesanan();//dibuat tanggal 10/10/2024 jam 09.05
-                    break;
+                    case 3:
+                        updatePesanan(scanner);
+                        break;
 
-                case 3:
-                    break;
+                    case 4:
+                        System.out.print("Masukkan nomor pesanan yang ingin dihapus: "); //dibuat tanggal 10/10/2024 Yesaya Sitompul jam 09:22
+                        int nomorHapus = scanner.nextInt() - 1;
+                        hapusPesanan(nomorHapus);
+                        break;
 
-                case 4:
-                    System.out.print("Masukkan nomor pesanan yang ingin dihapus: "); //dibuat tanggal 10/10/2024 Yesaya Sitompul jam 09:22
-                    int nomorHapus = scanner.nextInt() - 1;
-                    hapusPesanan(nomorHapus);
-                    break;
+                    case 5:
+                        System.out.println("Terima kasih Telah Menggunakan Aplikasi ini!");//dibuat tanggal 10/10/2024 jam 09.05
+                        break;
 
-                case 5:
-                    System.out.println("Terima kasih Telah Menggunakan Aplikasi ini!");//dibuat tanggal 10/10/2024 jam 09.05
-                    break;
+                    default:
+                        System.out.println("Pilihan tidak valid.");
+                        break;
+                }
+            } while (pilihan != 5);
 
-                default:
-                    System.out.println("Pilihan tidak valid.");
-                    break;
-            }
-        } while (pilihan != 5);
-
+        }
     }
 }
